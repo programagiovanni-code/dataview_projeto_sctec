@@ -11,7 +11,6 @@
 1. Instale o Python 3.10+ e o VS Code.
 2. Instale as bibliotecas mencionadas em "Ferramentas utilizadas:
 3. Importe as bibliotecas e módulos mencionados em 'Ferramentas utilizadas'
-
 ## Estrutura do projeto
 projeto/
 |-- data/
@@ -28,10 +27,9 @@ projeto/
 | |-- estatisticas_gerais.json
 | |-- graficos/
 |-- README.md
-
 ## Video explicativo
 
-
+## PARA MINHA ORGANIZAÇÃO
 Extensões e ferramentas utilizadas: ??
 
 1) Foi criado um script para a criação aleatória de um arquivo CSV com valores randomizados incluindo 'erros propositais' para treino de tratamento de dados.

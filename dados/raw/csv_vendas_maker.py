@@ -9,6 +9,7 @@ def gerar_dataset_vendas(n_registros=150, seed=42):
     incluindo valores nulos, strings sujas, datas inválidas e outliers."""
     random.seed(seed)
     np.random.seed(seed)
+
     produtos = ['Notebook', 'Smartphone', 'Tablet', 'Monitor', 'Teclado',
     'Mouse']
     precos = { 'Notebook': 3500, 'Smartphone': 2200, 'Tablet': 1800,
@@ -19,6 +20,7 @@ def gerar_dataset_vendas(n_registros=150, seed=42):
     regioes = ["Sudeste", "Sul", "Nordeste", "Centro-Oeste", "Norte"]
     clientes = [f"Cliente_{i:03d}" for i in range(1, 31)]
     data_inicio = datetime(2024, 1, 1)
+
     dados = []
 
     for i in range(n_registros):
@@ -26,13 +28,20 @@ def gerar_dataset_vendas(n_registros=150, seed=42):
         quantidade = random.randint(1, 10)
         preco = precos[produto]
         data = data_inicio + timedelta(days=random.randint(0, 364))
-        # Inserindo dados intencionalmente sujos para limpeza
         if random.random() < 0.05:
-            quantidade = None # valor nulo
+            quantidade = None 
         if random.random() < 0.04:
-            preco = None # valor nulo
+            preco = None 
         if random.random() < 0.03:
-            produto = " " + produto # espaço extra (string suja)
+            if random.random() < 0.25:
+                produto = " " + produto 
+            elif random.random() < 0.5:
+                produto = produto + " "
+            elif random.random() < 0.75:
+                produto = " " + produto + " "
+            else:
+                produto.lower
+
         data_str = data.strftime("%Y-%m-%d") if random.random() > 0.02 else "DATA INVALIDA"
         dados.append({
         "id_venda": i + 1,
