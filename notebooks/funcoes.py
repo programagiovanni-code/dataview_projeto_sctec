@@ -25,7 +25,7 @@ def contagem_valores(df):
             print(f"\n[ {column.upper()} ] -> {df[column].nunique()} valores. (Omitido)")
             continue 
             
-        print(f"\n[ {column.upper()} ]")
+        print(f"\n[ {column.upper()} ]: {df[column].nunique()} Elementos unicos")
         textos_itens = [f"'{chave}' ({len(str(chave))} caracteres): {valor}" for chave, valor in df[column].value_counts().items()]
         
         tamanho_bloco = 3
