@@ -26,7 +26,7 @@ def contagem_valores(df):
             continue 
             
         print(f"\n[ {column.upper()} ]")
-        textos_itens = [f"'{chave}' ({len(str(chave))} letras): {valor}" for chave, valor in df[column].value_counts().items()]
+        textos_itens = [f"'{chave}' ({len(str(chave))} caracteres): {valor}" for chave, valor in df[column].value_counts().items()]
         
         tamanho_bloco = 3
         for i in range(0, len(textos_itens), tamanho_bloco):
